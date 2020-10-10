@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace _1_AdivinaNumero
 {
@@ -20,9 +8,36 @@ namespace _1_AdivinaNumero
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int numeroAdivinar;
+
         public MainWindow()
         {
             InitializeComponent();
+            numeroAdivinar = GeneraNumeroAleatorio();
+        }
+
+        private void comprobarButton_Click(object sender, RoutedEventArgs e)
+        {
+            int valorEntrada = int.Parse(adivinarTextBox.Text);
+
+            if (valorEntrada > numeroAdivinar)
+                resultadoTextBlock.Text = "Te has pasado";
+            else if (valorEntrada < numeroAdivinar)
+                resultadoTextBlock.Text = "Te has quedado corto";
+            else
+                resultadoTextBlock.Text = "¡Has acertado!";
+        }
+
+        private void reiniciarButton_Click(object sender, RoutedEventArgs e)
+        {
+            resultadoTextBlock.Text = "";
+            adivinarTextBox.Text = "";
+        }
+
+        private int GeneraNumeroAleatorio()
+        {
+            Random random = new Random();
+            return random.Next(0, 101);
         }
     }
 }

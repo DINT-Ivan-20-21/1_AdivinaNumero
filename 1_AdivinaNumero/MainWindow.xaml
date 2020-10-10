@@ -7,9 +7,49 @@
     xmlns:local="clr-namespace:_1_AdivinaNumero"
     mc:Ignorable="d"
     Title="Adivina el número"
-    Height="150"
-    Width="500">
+    Height="155.613"
+    Width="492.516"
+    Icon="faq_question_mark.ico">
     <Grid>
-
+        <Button
+            x:Name="comprobarButton"
+            Content="Comprobar"
+            HorizontalAlignment="Left"
+            Margin="32,79,0,0"
+            VerticalAlignment="Top"
+            Width="120"
+            Height="25"
+            Click="comprobarButton_Click" />
+        <Button
+            x:Name="reiniciarButton"
+            Content="Reiniciar"
+            HorizontalAlignment="Left"
+            Margin="166,79,0,0"
+            VerticalAlignment="Top"
+            Width="120"
+            Height="25"
+            Click="reiniciarButton_Click" />
+        <TextBlock
+            HorizontalAlignment="Left"
+            Margin="29,33,0,0"
+            TextWrapping="Wrap"
+            Text="¿Qué número he pensado?"
+            VerticalAlignment="Top" />
+        <TextBox
+            x:Name="adivinarTextBox"
+            HorizontalAlignment="Left"
+            Margin="186,35,0,61"
+            TextWrapping="Wrap"
+            Text=""
+            Width="120" />
+        <TextBlock
+            x:Name="resultadoTextBlock"
+            HorizontalAlignment="Left"
+            Margin="319,36,0,0"
+            TextWrapping="Wrap"
+            Text=""
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.099,0.861"
+            Width="126" />
     </Grid>
 </Window>
