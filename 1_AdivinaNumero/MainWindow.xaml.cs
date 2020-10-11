@@ -32,6 +32,7 @@ namespace _1_AdivinaNumero
         {
             resultadoTextBlock.Text = "";
             adivinarTextBox.Text = "";
+            numeroAdivinar = GeneraNumeroAleatorio();
         }
 
         private int GeneraNumeroAleatorio()
